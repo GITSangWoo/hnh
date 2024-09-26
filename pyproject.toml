@@ -1,6 +1,6 @@
 [project]
 name = "hnh"
-version = "0.1.1"
+version = "0.2.0"
 description = "hotdog or not hotdog"
 authors = [
     {name = "GITSangWoo", email = "dogcenta@gmail.com"},
@@ -8,6 +8,10 @@ authors = [
 dependencies = [
     "fastapi>=0.115.0",
     "uvicorn>=0.30.6",
+    "transformers>=4.45.0",
+    "torch>=2.4.1",
+    "torchvision>=0.19.1",
+    "python-multipart>=0.0.10",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
@@ -21,5 +25,9 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 
+[tool.pdm.dev-dependencies]
+tests = [
+    "pytest>=8.3.3",
+]
 [project.scripts]
 pred = "hnh.main:prediction"
